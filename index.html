@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>계산기</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="calc" aria-label="계산기">
+    <header class="calc__head">
+      <span class="calc__logo" aria-hidden="true"></span>
+      <span class="calc__title">계산기</span>
+    </header>
+
+    <section class="display" aria-live="polite">
+      <div class="display__expr" id="expr"></div>
+      <div class="display__result" id="result">0</div>
+    </section>
+
+    <section class="keys" id="keys">
+      <button class="key key--fn"  data-action="clear">AC</button>
+      <button class="key key--fn"  data-action="sign" aria-label="부호 변경">±</button>
+      <button class="key key--fn"  data-action="percent">%</button>
+      <button class="key key--op"  data-action="op" data-value="/" aria-label="나누기">÷</button>
+
+      <button class="key" data-action="digit" data-value="7">7</button>
+      <button class="key" data-action="digit" data-value="8">8</button>
+      <button class="key" data-action="digit" data-value="9">9</button>
+      <button class="key key--op"  data-action="op" data-value="*" aria-label="곱하기">×</button>
+
+      <button class="key" data-action="digit" data-value="4">4</button>
+      <button class="key" data-action="digit" data-value="5">5</button>
+      <button class="key" data-action="digit" data-value="6">6</button>
+      <button class="key key--op"  data-action="op" data-value="-" aria-label="빼기">−</button>
+
+      <button class="key" data-action="digit" data-value="1">1</button>
+      <button class="key" data-action="digit" data-value="2">2</button>
+      <button class="key" data-action="digit" data-value="3">3</button>
+      <button class="key key--op"  data-action="op" data-value="+" aria-label="더하기">+</button>
+
+      <button class="key key--fn"  data-action="back" aria-label="지우기">⌫</button>
+      <button class="key" data-action="digit" data-value="0">0</button>
+      <button class="key" data-action="dot">.</button>
+      <button class="key key--eq"  data-action="equals" aria-label="계산">=</button>
+    </section>
+  </main>
+
+  <script src="calc.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

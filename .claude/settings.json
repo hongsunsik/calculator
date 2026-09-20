@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_response.filePath // .tool_input.file_path' | { read -r f; case \"$f\" in *.js) node --check \"$f\" || exit 2;; esac; }",
+            "timeout": 15,
+            "statusMessage": "JS 문법 검사 중..."
+          }
+        ]
+      }
+    ]
+  }
+}
